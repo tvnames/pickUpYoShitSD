@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 export default function Signup() {
   // States for registration
   const [name, setName] = useState("");
@@ -105,7 +104,11 @@ export default function Signup() {
           type="password"
         />
 
-        <button onClick={handleSubmit} className="btn" type="submit">
+        <button
+          onClick={handleSubmit}
+          className="btn btn primary"
+          type="submit"
+        >
           Submit
         </button>
       </form>

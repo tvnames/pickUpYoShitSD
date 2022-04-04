@@ -1,26 +1,23 @@
-import fingerPoint from ".//fingerPoint.jpg";
-import litterSd from ".//litterSd.jpg";
+import fingerPoint from "./img/fingerPoint.png";
+import litterSd from "./img/litterSd.jpg";
 import "./App.css";
 import Signup from "./components/Signup";
+import Nav from "./components/Nav";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <div style={{ backgroundImage: `url(${litterSd})` }} />
         <img src={fingerPoint} className="App-logo" alt="logo" />
-        <background
-          img
-          src={litterSd}
-          className="App-background"
-          alt="litterpic"
-        />
         <p>
           <>Pick up yo SHIT SD!</>
         </p>
-        <h1 strong> Hi, We're P . U . Yo . S . San Diego</h1>
+        <h1 strong> Hi, We're Pick Up Yo Sh$* San Diego</h1>
         <h2>
-          My wife and neice LOVE to go hiking. We go almost every weekend and
-          couldnt help but notice all the f#$^@#*ng trash lying around! WTF
+          My wife and niece LOVE to go hiking. We go almost every weekend and
+          couldn't help but notice all the f#$^@#*ng trash lying around! WTF
           SD?!?
         </h2>
         <h3>
@@ -39,6 +36,7 @@ function App() {
           Interested in joining? Sign up below! Click the link for events near
           you! Welcome to Pick Up Yo SHIT SD!
         </h6>
+        <Nav />
         <Signup />
       </header>
     </div>

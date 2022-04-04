@@ -14,14 +14,13 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: src/litterSd;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
@@ -69,8 +68,8 @@
 
   .error {
     display: block;
-    background-color: red;
-    color: white;
+    background-color: black;
+    color: red;
     width: fit-content;
     height: 50px;
     padding: 5px;
