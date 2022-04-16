@@ -47,7 +47,7 @@ export default function Signup() {
           display: submitted ? "" : "none",
         }}
       >
-        <h1>User {name} successfully registered!!</h1>
+        <h1one>User {name} successfully registered!!</h1one>
       </div>
     );
   };
@@ -61,7 +61,7 @@ export default function Signup() {
           display: error ? "" : "none",
         }}
       >
-        <h1>Please enter all the fields</h1>
+        <h1two>Please enter all the fields</h1two>
       </div>
     );
   };
