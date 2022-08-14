@@ -3,20 +3,23 @@ import litterSd from "./img/litterSd.jpg";
 import "./App.css";
 import Signup from "./components/Signup";
 import Nav from "./components/Nav";
+import Events from "./components/Events";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <div className="App">
+      <Signup />
       <header className="App-header">
         <div style={{ backgroundImage: `url(${litterSd})` }} />
         <img src={fingerPoint} className="App-logo" alt="logo" />
-        <p>
-          <>Pick up yo SHIT SD!</>
-        </p>
+
+        <div class="jumbotron">
+          <h1 class="display-4">Pick up your SH!% SD</h1>
+        </div>
         <Nav />
-        <h1> Hi, We're Pick Up Yo Sh!% San Diego</h1>
       </header>
+      <h1> Hi, We're Pick Up Your Sh!% San Diego</h1>
       <h1>
         My wife, niece, and LOVE to go hiking. We go almost every weekend and
         couldn't help but notice all the F#$^@#*NG trash lying around!
@@ -40,7 +43,7 @@ function App() {
         you! Welcome to Pick Up Yo SHIT SD!
       </h5>
       <h6>
-        <Signup />
+        <Events />
       </h6>
     </div>
   );
