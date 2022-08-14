@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-transparent">
       <button
         className="navbar-toggler"
         type="button"
@@ -30,6 +30,11 @@ const Navbar = () => {
           <li className="nav-item">
             <a className="nav-link" href="#">
               Contribute
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">
+              Join Us
             </a>
           </li>
         </ul>
