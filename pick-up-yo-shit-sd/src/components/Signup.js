@@ -1,117 +1,73 @@
 import React, { useState } from "react";
-export default function Signup() {
-  // States for registration
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import InputGroup from "react-bootstrap/InputGroup";
+import Row from "react-bootstrap/Row";
 
-  // States for checking the errors
-  const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState(false);
+function Signup() {
+  const [validated, setValidated] = useState(false);
 
-  // Handling the name change
-  const handleName = (e) => {
-    setName(e.target.value);
-    setSubmitted(false);
-  };
-
-  // Handling the email change
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-    setSubmitted(false);
-  };
-
-  // Handling the password change
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-    setSubmitted(false);
-  };
-
-  // Handling the form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (name === "" || email === "" || password === "") {
-      setError(true);
-    } else {
-      setSubmitted(true);
-      setError(false);
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
     }
-  };
 
-  // Showing success message
-  const successMessage = () => {
-    return (
-      <div
-        className="success"
-        style={{
-          display: submitted ? "" : "none",
-        }}
-      >
-        <h1one>User {name} successfully registered!!</h1one>
-      </div>
-    );
-  };
-
-  // Showing error message if error is true
-  const errorMessage = () => {
-    return (
-      <div
-        className="error"
-        style={{
-          display: error ? "" : "none",
-        }}
-      >
-        <h1two>Please enter all the fields</h1two>
-      </div>
-    );
+    setValidated(true);
   };
 
   return (
-    <div className="form">
-      <div>
-        <h1>User Registration</h1>
-      </div>
-
-      {/* Calling to the methods */}
-      <div className="messages">
-        {errorMessage()}
-        {successMessage()}
-      </div>
-
-      <form>
-        {/* Labels and inputs for form data */}
-        <label className="label">Name</label>
-        <input
-          onChange={handleName}
-          className="input"
-          value={name}
-          type="text"
+    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+      <Row className="mb-3">
+        <Form.Group as={Col} md="4" controlId="validationCustom01">
+          <Form.Label>First name</Form.Label>
+          <Form.Control
+            required
+            type="text"
+            placeholder="First name"
+            defaultValue="Mark"
+          />
+          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group as={Col} md="4" controlId="validationCustom02">
+          <Form.Label>Last name</Form.Label>
+          <Form.Control
+            required
+            type="text"
+            placeholder="Last name"
+            defaultValue="Otto"
+          />
+          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group as={Col} md="4" controlId="validationCustomUsername">
+          <Form.Label>Username</Form.Label>
+          <InputGroup hasValidation>
+            <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+            <Form.Control
+              type="text"
+              placeholder="Username"
+              aria-describedby="inputGroupPrepend"
+              required
+            />
+            <Form.Control.Feedback type="invalid">
+              Please choose a username.
+            </Form.Control.Feedback>
+          </InputGroup>
+        </Form.Group>
+      </Row>
+      <Form.Group className="mb-3">
+        <Form.Check
+          required
+          label="Agree to terms and conditions"
+          feedback="You must agree before submitting."
+          feedbackType="invalid"
         />
-
-        <label className="label">Email</label>
-        <input
-          onChange={handleEmail}
-          className="input"
-          value={email}
-          type="email"
-        />
-
-        <label className="label">Password</label>
-        <input
-          onChange={handlePassword}
-          className="input"
-          value={password}
-          type="password"
-        />
-
-        <button
-          onClick={handleSubmit}
-          className="btn btn primary"
-          type="submit"
-        >
-          Submit
-        </button>
-      </form>
-    </div>
+      </Form.Group>
+      <Button type="submit">Submit form</Button>
+    </Form>
   );
 }
+
+export default Signup;

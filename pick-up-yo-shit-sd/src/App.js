@@ -5,10 +5,11 @@ import Signup from "./components/Signup";
 import Nav from "./components/Nav";
 import Events from "./components/Events";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-calendar/dist/Calendar.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" align="right">
       <Signup />
       <header className="App-header">
         <div style={{ backgroundImage: `url(${litterSd})` }} />
